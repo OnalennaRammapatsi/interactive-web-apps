@@ -1,5 +1,5 @@
-import { role1 } from "./Alex";
-import { role2 } from "./Johannes";
-import { role3 } from "./Nwabisa";
+import { role1 } from "./Alex.js";
+import { role2 } from "./Johannes.js";
+import { role3 } from "./Nwabisa.js";
 
-console.log('Roles:', role1, role2, role3)
+console.log('Roles:', role3, role2, role1)
