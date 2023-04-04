@@ -2,8 +2,8 @@ const FREE_WARNING = 'Free shipping only applies to single customer orders';
 const BANNED_WARNING = 'Unfortunately we do not ship to your country of residence';
 const NONE_SELECTED = 0;
 
-let location = 'RSA';
-let currency = 'R';
+let location = 'NK';
+let currency = '$';
 let customers = 1;
 let shipping;
 
