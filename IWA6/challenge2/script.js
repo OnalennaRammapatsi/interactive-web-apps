@@ -6,7 +6,7 @@ const transport = 10.2;
 const hourOfDay = 00;
 const minuteOfDay = 00;
 
-// Only change below this line
+
 
 if (hourOfDay == 00 && minuteOfDay == 00) {
 	let taxAsDecimal = parseInt(tax) /100*800
