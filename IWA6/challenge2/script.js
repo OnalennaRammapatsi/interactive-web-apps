@@ -8,10 +8,10 @@ const minuteOfDay = 00;
 
 
 
-if (hourOfDay == 00 && minuteOfDay == 00) {
-	let taxAsDecimal = parseInt(tax) /100*800
-    taxAsDecimal = salary - taxAsDecimal
-    const startingAfterTax =  taxAsDecimal -food - rent -transport
-    console.log(startingAfterTax.toFixed(2))
+if (hourOfDay !== undefined && minuteOfDay !== undefined  && hourOfDay === 0 && minuteOfDay === 0)
+{
+    let taxAsDecimal = parseFloat(tax) / 100;
+    const startingAfterTax = salary * (1 - taxAsDecimal);
+    const balance = startingAfterTax - transport - food - rent;
+    console.log("R"+balance.toFixed(2));
 }
-	
