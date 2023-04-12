@@ -88,4 +88,3 @@ let lastHoliday = Object.values(holidays).reduce((latest, holiday) => {
     const holidayDate = new Date(holiday.date)
     if
 
-// Do not change code above this comment
