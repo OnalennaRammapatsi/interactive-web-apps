@@ -85,6 +85,7 @@ console.log(`First holiday of the year: ${firstHoliday.date.toLocaleDateString('
 
 // Find the last holiday in the year
 let lastHoliday = Object.values(holidays).reduce((latest, holiday) => {
-    const holidayDate = new Date(holiday.date)
+    const holidayDate = new Date(holiday.date))
     if
+}
 
