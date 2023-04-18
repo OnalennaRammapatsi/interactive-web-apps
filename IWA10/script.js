@@ -48,27 +48,32 @@ const holidays = {
 }
 const christmas = 6
 const futureId = 9
+
 // Do not change code above this comment
-console.log(holidays[futureId]? holidays[futureId].name :`ID ${futureId} not created yet` );
+
+//constant variable called currentYear using the Date object to get the current year.it creates an object called holidays with 9 key-value pairs.
+//Each value is an object containing the id, name, and date of a specific holiday.
+console.log(holidays[futureId]? holidays[futureId].name :`ID ${futureId} not created yet` ); //added a ternary operator
 const copied = {
-    id: holidays[christmas].id ,
+    id: holidays[christmas].id , //the name property of the copied.name is modified to the "X-mas Day"
     name: 'X-mas Day',
-    date: new Date(`25 December ${currentYear}`),
+    date: new Date(`25 December ${currentYear}`),  
 }
-const correctDate = copied.date;
+
+
+const correctDate = copied.date; 
     // correctDate.setHours(0,0,0,0) ;
     const isEarlier = correctDate < holidays[christmas].date;
     console.log('New date is earlier',  isEarlier);
     if(isEarlier) {
     console.log('')
 console.log('ID change:', holidays[christmas].id != copied.id)
-console.log('')
 console.log('Name change:', copied.name)
-console.log('')
+
 console.log('Date change:', (copied.date).toLocaleDateString('en-GB'))
 console.log('')
     }
- const firstHolidayTimestamp = Math.min(
+ const firstHolidayTimestamp = Math.min(  // I removed the 'getTime' function
     holidays[1].date,
     holidays[2].date,
     holidays[3].date,
@@ -95,28 +100,7 @@ const lastHolidayTimestamp = Math.max(
 let lastDay = new Date (lastHolidayTimestamp)
 lastDay = lastDay.toLocaleDateString('en-GB')
 console.log(lastDay)
-// const firstDay = firstHolidayTimestamp.getDate()
-// const firstMonth = firstHolidayTimestamp.getMonth()
-// const lastDay = lastHolidayTimestamp.getDate()
-// const lastMonth = lastHolidayTimestamp.getMonth()
-// console.log(firstDay,firstMonth,currentYear)
-// console.log(lastDay,lastMonth,currentYear)
+
+//changed the square[] bracket to parentheses () on math.random
 const randomHoliday = Math.floor(Math.random() * 8)
 console.log(holidays[randomHoliday].name)
-/* const date1 = new date("16 Deember 2023").getTime();
-const date2 = new date("1 April 2023").getTime();
-const date3 = new date("26 Deember 2023").getTime();
-const date4 = new date("1 January 2023").getTime();
-const date5 = new date("9 August 2023").getTime();
-const date6 = new date("24 September 2023").getTime();
-const date7 = new date("25 December 2023").getTime();
-const date8 = new date("16 June2023").getTime();
-const date9 = new date("21 March 2023").getTime(); */
-//-----      data   convertion   ------//
-/* let firstHolidayTimestamp = Math.min(date1,date2,date3,date4,date5,date6,date7,date8,date9);
-const dateFirst = new Date(firstHolidayTimestamp);
-console.log(dateFirst)
-const dayFirst = dateFirst.getUTCDate();
-const monthFirst = dateFirst.getUTCMonth() + 1;
-const yearFirst = dateFirst.getUTCFullYear();
-firstHolidayTimestamp = `${dayFirst}/${monthFirst}/${yearFirst}` */

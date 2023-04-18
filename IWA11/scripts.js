@@ -1,3 +1,4 @@
+//select all relevant elements using their ID's and classes
 const root1 = document.querySelector('[data-key="order1"]');
 const biscuits1 = root1.querySelector('.biscuits .count');
 const donuts1 = root1.querySelector('.donuts .count');
@@ -16,10 +17,11 @@ const donuts3 = root3.querySelector('.donuts .count');
 const pancakes3 = root3.querySelector('.pancakes .count');
 const status3 = root3.querySelector('.status dd');
 
-biscuits1.textContent = root1.dataset.biscuits;
+//retrieve data attribute values and update elements
+biscuits1.textContent = root1.dataset.biscuits; // Used to select data attributes
 donuts1.textContent = root1.dataset.donuts;
 pancakes1.textContent = root1.dataset.pancakes;
-status1.textContent = root1.dataset.delivered === "true" ? "Delivered" : "Pending";
+status1.textContent = root1.dataset.delivered === "true" ? "Delivered" : "Pending"; 
 
 biscuits2.textContent = root2.dataset.biscuits;
 donuts2.textContent = root2.dataset.donuts;
