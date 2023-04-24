@@ -7,14 +7,14 @@ const data = {
 }
 
 // Only edit below
-const first = data.lists [0][1]
+const first = data.lists [0][1] //I removed the curly braces and replaced the 'first, second and third variables with a 'data' object's 'lists' property
 const second = data.lists [1][1]
 const third = data.lists [2][1]
 
 /*const { first = [1] } = data.lists.find(([name]) => name === 'first') || {};  // I extract them from the lists array by searching for the corresponding name.
 const { second = [1] } = data.lists.find(([name]) => name === 'second') || {};
 const { third = [1] } = data.lists.find(([name]) => name === 'third') || {}; */
-//I provide a default value of [1] for first, second, and third in case they are not found in data.
+//I provided a default value of [1] for first, second, and third in case they are not found in data.
 
 const result = [];
 
@@ -28,7 +28,7 @@ const extractBiggest = () => {
     return second.pop();
   }
 
-  return third.pop();
+  return third.pop(); //Added the `pop` method
 };
 
 // Only edit above

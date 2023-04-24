@@ -76,14 +76,15 @@ const MONTHS = [
     title.textContent= id; //Added the textContent
     fragment.appendChild(title);
   
-    const list = document.createElement(dl);
+    const list = document.createElement("dl");
+    const raceCount = races.length;
   
-    const day = date.getDate();
-    const month = MONTHS[date.month];
-    const year = date.year;
+    const day = new Date (date).getDate();
+    const month = MONTHS[new Date (date).getMonth()];
+    const year = new Date (date).getFullYear();
   
-    first, second, third, fourth = timeAsArray;
-    total = first + second + third + fourth;
+    const [first, second, third, fourth] = time;
+    const total = first + second + third + fourth;
   
     const hours = Math.floor(total / 60);
     const minutes = total % 60;
@@ -99,7 +100,7 @@ const MONTHS = [
       <dd>${day} ${month} ${year}</dd>
   
       <dt>Total Time (Latest)</dt>
-      <dd>${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}</dd> //Added 
+      <dd>${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}</dd> 
     `;
   
     fragment.appendChild(list);
@@ -108,4 +109,4 @@ const MONTHS = [
   const {NM372, SV782} = data.response.data; /*[NM372], [SV782] = data*/
 
   document.querySelector("[data-athlete='NM372']").appendChild(createHtml(NM372));
-  document.querySelector("data-athlete='SV782']").appendChild(createHtml(SV782));
+  document.querySelector("[data-athlete='SV782']").appendChild(createHtml(SV782));
