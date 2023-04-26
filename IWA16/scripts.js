@@ -1,4 +1,4 @@
-const MONTHS = [
+const MONTHS = [ //defines an array `MONTHS` and their names
     'Jan',
     'Feb',
     'Mar',
@@ -13,7 +13,7 @@ const MONTHS = [
     'Dec',
   ]
   
-  const data = {
+  const data = { //defines Object `data` that has info about two athlets and their races.
     response: {
       requestType: "FETCH_ATHLETE_DATA",
       requestBy: "ALL_MATCHING_ATHLETES",
@@ -65,10 +65,10 @@ const MONTHS = [
   
   // Only edit below this comment
   
-  const createHtml = (athlete) => {
+  const createHtml = (athlete) => { 
     const {firstName, surname, id, races} = athlete;
     const [latestRace] = races.slice(-1);
-    const {date, time} = latestRace;
+    const {date, time} = latestRace; //each object = properties `date` and `time`
   
     const fragment = document.createDocumentFragment();
   
@@ -80,7 +80,7 @@ const MONTHS = [
     const raceCount = races.length;
   
     const day = new Date (date).getDate();
-    const month = MONTHS[new Date (date).getMonth()];
+    const month = MONTHS[new Date (date).getMonth()]; //returns a number
     const year = new Date (date).getFullYear();
   
     const [first, second, third, fourth] = time;
