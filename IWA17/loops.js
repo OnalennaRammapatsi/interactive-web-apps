@@ -64,37 +64,37 @@ const createData = function(){
 };
 
 const addCell = function(existing, classString, value) {
-    return `${existing}<td class="${classString}">${value}</td>`;
+  return `${existing}<td class="${classString}">${value}</td>`;
 };
-const createHtml = function(data) {              
-    let result = '';
-    for (let i = 0; i < data.length; i++) {      
-      const week = data[i];
-      let inner = '';
-      inner = addCell(inner, 'table__cell table__cell_sidebar', `Week ${week.week}`);  
-      for (let j = 0; j < week.days.length; j++) {                 
-        const day = week.days[j];
-        let classString = 'table__cell';
-
-        //added constant to declare 'isToday, isWeekend, and isAlternate' variables.
-        const currentDate = new Date();
-        const isToday = currentDate.getDate() === day.value && currentDate.getMonth() === currentDate.getMonth();
-        const isWeekend = day.dayOfWeek === 1 || day.dayOfWeek === 7;
-        const isAlternate = week.week % 2 === 0;
-        if (isToday) {
-          classString = `${classString} table__cell_today`;     
-        }
-        if (isWeekend) {
-          classString = `${classString} table__cell_weekend`;  
-        if (isAlternate) {
-          classString = `${classString} table__cell_alternate`;  
-        }
-        inner = addCell(inner, classString, day.value || '');
+const createHtml = function(data) {             
+  let result = '';
+  for (let i = 0; i < data.length; i++) {      
+    const week = data[i];
+    let inner = '';
+    inner = addCell(inner, 'table__cell table__cell_sidebar', `Week ${week.week}`);  
+    for (let j = 0; j < week.days.length; j++) {                  
+      const day = week.days[j];
+      let classString = 'table__cell';
+      //added constant to declare 'isToday, isWeekend, and isAlternate' variables.
+      const currentDate = new Date();
+      const isToday = currentDate.getDate() === day.value && currentDate.getMonth() === currentDate.getMonth();
+      const isWeekend = day.dayOfWeek === 1 || day.dayOfWeek === 7;
+      const isAlternate = week.week % 2 === 0;
+      if (isToday) {
+        classString = `${classString} table__cell_today`;      
       }
-      result += `<tr>${inner}</tr>`;           
+      if (isWeekend) {
+        classString = `${classString} table__cell_weekend`;    
+      }
+      if (isAlternate) {
+        classString = `${classString} table__cell_alternate`;  
+      }
+      inner = addCell(inner, classString, day.value || '');
     }
-    return result;
-  };
+    result += `<tr>${inner}</tr>`;            
+  }
+  return result;
+};
 
 
 // Only edit above
