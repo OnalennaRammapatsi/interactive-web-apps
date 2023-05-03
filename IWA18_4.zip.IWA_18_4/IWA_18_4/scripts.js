@@ -1,17 +1,18 @@
 import { createOrderData, updateDragging } from "./data.js";
 import { createOrderHtml, html, updateDraggingHtml } from "./view.js";
-const handleHelpToggle = (event) => {
+const handleHelpToggle = (event) => { //toggles the visibility of a help overlay when a "help" button is clicked.
     const { overlay, cancel } = html.help;
     overlay.show();
     if (event.target === cancel) overlay.close();
   };
 
-
-const handleAddToggle = (e) => {
+/* defines a function called handleAddToggle = event handler for a click event.the event focus on (html.other.add), 
+Then it extracts three variables from an object (html.add.) */
+const handleAddToggle = (e) => { 
   html.other.add.focus();
   const {overlay, cancel, form} = html.add;
-  overlay.show();
-  if (e.target === cancel) {
+  overlay.show(); //the method is called to display a hidden element.
+  if (e.target === cancel) { //If the `e.target`matches the cancel element, the overlay is closed and the form element is reset.
     overlay.close();
     form.reset();
   }
@@ -73,6 +74,7 @@ const handleDelete = (e) => {
   orderToBeDeleted.remove();
   overlay.close();
 };
+//all the buttons
 html.add.cancel.addEventListener("click", handleAddToggle); //
 html.other.add.addEventListener("click", handleAddToggle); //
 html.add.form.addEventListener("submit", handleAddSubmit); //
