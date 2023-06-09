@@ -3,11 +3,11 @@
     "development"
   ],
   "hints": {
-    "compat-api/css": [
+    "compat-api/html": [
       "default",
       {
         "ignore": [
-          "user-select"
+          "meta[name=theme-color]"
         ]
       }
     ],
@@ -15,14 +15,6 @@
       "default",
       {
         "button-name": "off"
-      }
-    ],
-    "compat-api/html": [
-      "default",
-      {
-        "ignore": [
-          "meta[name=theme-color]"
-        ]
       }
     ]
   }
